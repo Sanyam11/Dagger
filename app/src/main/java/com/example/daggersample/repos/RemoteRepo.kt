@@ -2,9 +2,12 @@ package com.example.daggersample.repos
 
 import javax.inject.Inject
 
-class RemoteRepo @Inject constructor(){
+interface RemoteRepo {
+    fun getRemoteData() : String
+}
 
-    fun getRemoteData() : String {
+class RemoteRepoImpl @Inject constructor(): RemoteRepo {
+    override fun getRemoteData(): String {
         return "Remote Data"
     }
 }
