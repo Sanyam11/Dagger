@@ -1,18 +1,16 @@
 package com.example.daggersample.processor
 
+import android.util.Log
 import com.example.daggersample.repos.LocalRepo
 import com.example.daggersample.repos.RemoteRepo
+import javax.inject.Inject
 
-class RepoProcessor {
-    private lateinit var localRepo : LocalRepo
-    private lateinit var remoteRepo : RemoteRepo
+class RepoProcessor @Inject constructor(
+    private val localRepo: LocalRepo,
+    private val remoteRepo: RemoteRepo
+) {
 
-    constructor(localRepo: LocalRepo,remoteRepo: RemoteRepo){
-        this.localRepo = localRepo
-        this.remoteRepo = remoteRepo
-    }
-
-    fun getData() : String {
-        return localRepo.getLocalData() + remoteRepo.getRemoteData()
+    fun getData() {
+        Log.d("RepoProcessorData",localRepo.getLocalData() + remoteRepo.getRemoteData())
     }
 }

@@ -1,7 +1,9 @@
 package com.example.daggersample.repos
 
+import javax.inject.Inject
 
-class LocalRepo {
+
+class LocalRepo @Inject constructor() {
 
     fun getLocalData() : String {
         return "local Data"
