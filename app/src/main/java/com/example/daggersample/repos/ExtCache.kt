@@ -3,9 +3,9 @@ package com.example.daggersample.repos
 /*
  This is an external class, can't @Inject constructor
  */
-class ExtCache{
+class ExtCache(private var userId: String) {
 
     fun getCacheData() : String {
-        return "Cache Data"
+        return " userId : $userId Cache Data"
     }
 }

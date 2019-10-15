@@ -1,6 +1,7 @@
 package com.example.daggersample
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.daggersample.di.DaggerRepoComponent
 import com.example.daggersample.processor.RepoProcessor
@@ -19,6 +20,6 @@ class MainActivity : AppCompatActivity() {
             .create()
             .inject(this)
 
-        repoProcessor.getData()
+        Log.d("RepoProcessorData",repoProcessor.getData())
     }
 }

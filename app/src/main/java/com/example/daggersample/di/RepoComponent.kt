@@ -4,7 +4,7 @@ import com.example.daggersample.MainActivity
 import com.example.daggersample.processor.RepoProcessor
 import dagger.Component
 
-@Component
+@Component (modules = [ExtCacheModule::class])
 interface RepoComponent {
     fun getRepoProcessor(): RepoProcessor
 
