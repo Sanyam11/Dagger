@@ -6,14 +6,8 @@ import dagger.Provides
 
 @Module
 class ExtCacheModule {
-
     @Provides
-    fun provideUserId() : String {
-        return "UserId"
-    }
-
-    @Provides
-    fun provideExtCache(userId: String): ExtCache {
-        return ExtCache(userId)
+    fun provideExtCache(): ExtCache {
+        return ExtCache()
     }
 }

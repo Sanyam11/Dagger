@@ -7,6 +7,5 @@ import dagger.Component
 @Component (modules = [ExtCacheModule::class,LocalRepoModule::class,RemoteRepoModule::class])
 interface RepoComponent {
     fun getRepoProcessor(): RepoProcessor
-
     fun inject(mainActivity: MainActivity)
 }

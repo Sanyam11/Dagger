@@ -10,7 +10,7 @@ class RepoProcessor @Inject constructor(
     private val remoteRepo: RemoteRepo,
     private val extCache: ExtCache
 ) {
-    fun getData(): String {
-        return localRepo.getLocalData() + remoteRepo.getRemoteData() + extCache.getCacheData()
+    fun getData(userId: String): String {
+        return "${localRepo.getLocalData(userId)} ${remoteRepo.getRemoteData(userId)} ${extCache.getCacheData(userId)}"
     }
 }

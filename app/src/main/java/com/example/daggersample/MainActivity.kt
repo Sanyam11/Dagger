@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
             .create()
             .inject(this)
 
-        Log.d("RepoProcessorData",repoProcessor.getData())
+        val userId = "dskjdnqkjnw34y23874y2387hdjwdh2387y428"
+        Log.d("RepoProcessorData",repoProcessor.getData(userId))
     }
 }

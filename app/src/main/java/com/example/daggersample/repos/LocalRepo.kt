@@ -4,11 +4,11 @@ import javax.inject.Inject
 
 
 interface LocalRepo {
-    fun getLocalData() : String
+    fun getLocalData(userId : String) : String
 }
 
 class LocalRepoImpl @Inject constructor() : LocalRepo {
-    override fun getLocalData(): String {
-        return "local Data"
+    override fun getLocalData(userId : String): String {
+        return "local Data $userId"
     }
 }
