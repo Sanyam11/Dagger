@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.daggersample.di.DaggerRepoComponent
 import com.example.daggersample.processor.RepoProcessor
+import com.example.daggersample.repos.ExtCache
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +18,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         DaggerRepoComponent
-            .create()
+            .builder()
+            .extCache(ExtCache())
+            .build()
             .inject(this)
 
         val userId = "dskjdnqkjnw34y23874y2387hdjwdh2387y428"
