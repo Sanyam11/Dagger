@@ -4,16 +4,21 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.daggersample.di.DaggerRepoComponent
 import com.example.daggersample.processor.RepoProcessor
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var repoProcessor : RepoProcessor
+    @Inject
+    lateinit var repoProcessor : RepoProcessor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        repoProcessor = DaggerRepoComponent.create().getRepoProcessor()
+        DaggerRepoComponent
+            .create()
+            .inject(this)
+
         repoProcessor.getData()
     }
 }
